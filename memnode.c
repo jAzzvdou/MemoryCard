@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:57:15 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 18:00:34 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/09 21:30:02 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	add_memnode(t_memlist *list, void *addr)
 {
 	t_memnode	*new_node;
 
-	new_node = create_node(addr);
+	new_node = create_memnode(addr);
 	if (!new_node)
 		return ;
 	if (!list->first)
@@ -68,7 +68,7 @@ void	search_memnode(void *content)
 	t_memnode	*node;
 	t_memlist	*list;
 
-	list = list_holder(NULL, 0);
+	list = memlist_holder(NULL, 0);
 	if (!list)
 		return ;
 	node = list->first;
@@ -76,7 +76,7 @@ void	search_memnode(void *content)
 	{
 		if (node->addr == content)
 		{
-			remove_node(list, node);
+			remove_memnode(list, node);
 			return ;
 		}
 		node = node->next;
@@ -89,7 +89,7 @@ void	status_memnode(void *addr)
 	t_memnode	*node;
 	t_memlist	*list;
 
-	list = list_holder(NULL, 0);
+	list = memlist_holder(NULL, 0);
 	if (!list)
 		return ;
 	pos = 0;

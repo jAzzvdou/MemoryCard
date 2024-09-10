@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:56:22 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 18:00:02 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/09 22:47:12 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,11 @@ t_memlist	*memlist_holder(t_memlist *new_list, int tofree)
 	if (new_list)
 	{
 		if (list)
-			free_list(list);
+			clear_memlist(list);
 		list = new_list;
 	}
 	if (tofree && list)
-	{
-		free_list(list);
-		list = NULL;
-	}
+		clear_memlist(list);
 	return (list);
 }
 
@@ -49,9 +46,12 @@ void	print_memlist(void)
 	t_memlist	*list;
 	size_t		pos;
 
-	list = list_holder(NULL, 0);
+	list = memlist_holder(NULL, 0);
 	if (!list)
+	{
+		printf(GREEN"Lista vazia\n"RESET);
 		return ;
+	}
 	node = list->first;
 	pos = 0;
 	while (node)

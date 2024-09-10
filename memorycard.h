@@ -6,26 +6,27 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:42:49 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 18:04:24 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/09 22:31:16 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MEMORYCARD_H
 # define MEMORYCARD_H
 
-# include <unistd.h> //| WRITE
 # include <stdlib.h> //| MALLOC, FREE, NULL
+# include <stdio.h>  //| PRINTF
 
 //----------| DEFINES |----------//
-# define FREEALL 0
+# define FREEALL -1
 # define FREE    1
 # define MALLOC  2
 # define STATUS  3
 # define PRINT   4
 
-# define STRING  5
-# define VECTOR  6
-# define INTS    7
+# define DEFAULT 5
+# define STRING  6
+# define VECTOR  7
+# define INTS    8
 
 # define RED     "\001\033[38;2;255;0;0m\002"
 # define GREEN   "\001\033[38;2;0;255;0m\002"
@@ -48,7 +49,7 @@ typedef struct s_memlist
 }	t_memlist;
 
 //----------| MEMORYCARD |----------//
-void	*memorycard(void *content, int type, int mallocfree, size_t memsize);
+void		*memorycard(void *content, int type, int mallocfree, size_t memsize);
 
 //----------| MEMLIST |----------//
 t_memlist	*start_memlist(void);
@@ -61,6 +62,7 @@ t_memlist	*memlist_holder(t_memlist *new_list, int tofree);
 void		print_memlist(void);
 
 //----------| TYPES FUNCTIONS |----------//
+void	*type_default(void *ptr, int tofree, size_t memsize);
 char	*type_str(char *s, int tofree, size_t memsize);
 char	**type_vector(char **vector, int tofree, size_t memsize);
 int	*type_ints(int *arr, int tofree, size_t memsize);
