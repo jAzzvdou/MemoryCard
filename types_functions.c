@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 18:01:17 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 20:43:38 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/10 10:08:18 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*type_default(void *ptr, int tofree, size_t memsize)
 {
 	void	*new;
 
-	if (tofree)
+	if (tofree == FREE)
 		return (search_memnode(ptr), NULL);
 	new = malloc(memsize);
 	if (!new)

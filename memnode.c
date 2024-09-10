@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:57:15 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 21:30:02 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/10 10:18:09 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,13 @@ void	status_memnode(void *addr)
 	{
 		if (node->addr == addr)
 		{
-			printf(GREEN"Está mallocado. Posição: %zu.\n"RESET, pos);
+			printf(GREEN"Está mallocado!\n");
+			printf("Posição: %zu | Addr: %p.\n"RESET, pos, node->addr);
 			return ;
 		}
 		node = node->next;
 		pos++;
 	}
-	printf(RED"Não está mallocado ou já foi liberado.\n"RESET);
+	printf(RED"Não está mallocado ou já foi liberado.\n");
+	printf("Addr: %p.\n"RESET, addr);
 }
