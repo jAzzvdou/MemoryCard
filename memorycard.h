@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:42:49 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 22:31:16 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:17:25 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_memlist
 }	t_memlist;
 
 //----------| MEMORYCARD |----------//
-void		*memorycard(void *content, int type, int mallocfree, size_t memsize);
+void		*memcard(void *content, int type, int mallocfree, size_t memsize);
 
 //----------| MEMLIST |----------//
 t_memlist	*start_memlist(void);
@@ -68,7 +68,7 @@ char	**type_vector(char **vector, int tofree, size_t memsize);
 int	*type_ints(int *arr, int tofree, size_t memsize);
 
 //----------| TYPES FUNCTIONS UTILS |----------//
-char	**fill_vector(char **vector, size_t memsize);
+char	**fillvector(char **vector, size_t memsize);
 
 //----------| CLEANERS |----------//
 void		clear(void **content);
@@ -76,7 +76,7 @@ void		clear_vector(char **vector);
 void		clear_memlist(t_memlist *list);
 
 //----------| UTILS |----------//
-size_t		str_size(const char *s);
-void		fill_zero(void *s, size_t n);
+size_t		strsize(const char *s);
+void		fillzero(void *s, size_t n);
 
 #endif //| MEMORYCARD

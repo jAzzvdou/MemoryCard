@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 18:01:17 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/10 10:08:18 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:46:39 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*type_default(void *ptr, int tofree, size_t memsize)
 	if (!new)
 		return (NULL);
 	add_memnode(memlist_holder(NULL, 0), new);
-	fill_zero(new, memsize);
+	fillzero(new, memsize);
 	return (new);
 }
 
@@ -48,7 +48,7 @@ char	*type_str(char *s, int tofree, size_t memsize)
 		new[i] = '\0';
 	}
 	else
-		fill_zero(new, memsize);
+		fillzero(new, memsize);
 	return (new);
 }
 
@@ -73,11 +73,11 @@ int	*type_ints(int *arr, int tofree, size_t memsize)
 		}
 	}
 	else
-		fill_zero(new, memsize);
+		fillzero(new, memsize);
 	return (new);
 }
 
-char	**fill_vector(char **vector, size_t memsize)
+char	**fillvector(char **vector, size_t memsize)
 {
 	size_t	i;
 
@@ -107,12 +107,12 @@ char	**type_vector(char **vector, int tofree, size_t memsize)
 		i = 0;
 		while (vector[i] && i < memsize)
 		{
-			new[i] = type_str(vector[i], MALLOC, str_size(vector[i]));
+			new[i] = type_str(vector[i], MALLOC, strsize(vector[i]));
 			i++;
 		}
 		new[memsize] = NULL;
 	}
 	else
-		new = fill_vector(new, memsize);
+		new = fillvector(new, memsize);
 	return (new);
 }

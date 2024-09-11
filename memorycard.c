@@ -6,13 +6,13 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 18:02:40 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 22:34:40 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:15:19 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memorycard.h"
 
-void	*memorycard(void *content, int type, int mallocfree, size_t memsize)
+void	*memcard(void *content, int type, int mallocfree, size_t memsize)
 {
 	if (mallocfree == FREEALL)
 		return (memlist_holder(NULL, FREE), NULL);

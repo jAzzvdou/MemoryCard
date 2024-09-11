@@ -6,13 +6,13 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:52:55 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 17:53:58 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:12:17 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memorycard.h"
 
-size_t	str_size(const char *s)
+size_t	strsize(const char *s)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ size_t	str_size(const char *s)
 	return (i);
 }
 
-void	fill_zero(void *s, size_t n)
+void	fillzero(void *s, size_t n)
 {
 	char	*zero;
 
