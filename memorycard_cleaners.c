@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:54:35 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/11 10:04:03 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:47:10 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ void	clear_vector(char **vector)
 {
 	size_t	i;
 
-	i = 0;
-	while (vector[i])
+	if (vector)
 	{
-		search_memnode(vector[i]);
-		i++;
+		i = 0;
+		while (vector[i])
+		{
+			search_memnode(vector[i]);
+			i++;
+		}
 	}
 	search_memnode(vector);
 }
