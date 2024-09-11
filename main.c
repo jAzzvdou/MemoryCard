@@ -31,6 +31,13 @@ void	test_default_with_free(void)
 	ds = memcard(ds, DEFAULT, FREE, 0);
 	ds = memcard(ds, DEFAULT, FREE, 0); //| Teste de double free.
 	memcard(ds, STATUS, 0, 0);
+
+	//----------| LIST |----------//
+	t_memnode *node = memcard(NULL, DEFAULT, MALLOC, sizeof(t_memnode));
+	memcard(node, STATUS, 0, 0);
+	node = memcard(node, DEFAULT, FREE, 0);
+	node = memcard(node, DEFAULT, FREE, 0);
+	memcard(node, STATUS, 0, 0);
 }
 
 void	test_string_with_free(void)
@@ -92,8 +99,8 @@ int	main(void)
 	//----------| Testes SEM free |----------//
 	test_default_without_free();
 	test_string_without_free();
-	print_memlist();
-	clear_memlist();
 
+	print_memlist();
+	memlist_holder(NULL, 1);
 	return (0);
 }
