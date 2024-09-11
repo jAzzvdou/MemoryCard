@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:56:22 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 22:47:12 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:05:33 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ t_memlist	*memlist_holder(t_memlist *new_list, int tofree)
 	if (new_list)
 	{
 		if (list)
-			clear_memlist(list);
+			clear_memlist();
 		list = new_list;
 	}
 	if (tofree && list)
-		clear_memlist(list);
+		clear_memlist();
 	return (list);
 }
 

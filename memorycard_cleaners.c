@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:54:35 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/09 20:05:09 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:04:03 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ void	clear_vector(char **vector)
 	search_memnode(vector);
 }
 
-void	clear_memlist(t_memlist *list)
+void	clear_memlist(void)
 {
 	t_memnode	*current;
 	t_memnode	*next_node;
+	t_memlist	*list;
 
+	list = memlist_holder(NULL, 0);
 	current = list->first;
 	while (current)
 	{

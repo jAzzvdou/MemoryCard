@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:42:49 by jazevedo          #+#    #+#             */
-/*   Updated: 2024/09/11 09:17:25 by jazevedo         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:04:26 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	**fillvector(char **vector, size_t memsize);
 //----------| CLEANERS |----------//
 void		clear(void **content);
 void		clear_vector(char **vector);
-void		clear_memlist(t_memlist *list);
+void		clear_memlist(void);
 
 //----------| UTILS |----------//
 size_t		strsize(const char *s);
